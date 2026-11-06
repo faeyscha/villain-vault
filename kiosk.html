@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Villain Vault | Rental Kiosk</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- External JavaScript -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="site-header">
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                 VILLAIN VAULT
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="kiosk.html" class="active">
+                    Rental Kiosk
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <main class="kiosk-main">
+
+        <!-- PAGE HEADING -->
+        <section class="kiosk-heading">
+
+            <p class="eyebrow">
+                YOUR SECRET HEADQUARTERS AWAITS
+            </p>
+
+            <h1>
+                Villain Rental
+                <span>Kiosk.</span>
+            </h1>
+
+            <p>
+                Choose your dream hideout, select your
+                membership level and unlock exclusive
+                loyalty discounts.
+            </p>
+
+        </section>
+
+
+        <!-- KIOSK CONTENT -->
+        <section class="kiosk-layout">
+
+            <!-- LEFT SIDE: RENTAL FORM -->
+            <div class="glass-card form-card">
+
+                <h2>Reserve Your Lair</h2>
+
+                <p class="form-subtitle">
+                    Complete the form below to calculate
+                    your rental cost and loyalty discount.
+                </p>
+
+
+                <form id="rentalForm" novalidate>
+
+                    <!-- CUSTOMER NAME -->
+                    <div class="form-group">
+
+                        <label for="customerName">
+                            Customer Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            name="customerName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            aria-describedby="customerNameError"
+                            required
+                        >
+
+                        
+<small
+    class="error-message"
+    id="customerNameError"
+    style="color: #FF0000 !important;">
+</small>
+
+
+                    </div>
+
+
+                    <!-- EMAIL ADDRESS -->
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="example@email.com"
+                            autocomplete="email"
+                            aria-describedby="emailError"
+                            required
+                        >
+
+                       
+<small
+    class="error-message"
+    id="emailError"
+    style="color: #FF0000 !important;">
+</small>
+
+
+                    </div>
+
+
+                    <!-- LAIR SELECTION -->
+                    <div class="form-group">
+
+                        <label for="lairType">
+                            Choose Your Lair *
+                        </label>
+
+                        <select
+                            id="lairType"
+                            name="lairType"
+                            aria-describedby="lairTypeError"
+                            required
+                        >
+
+                            <option value="">
+                                -- Select Lair --
+                            </option>
+
+                            <option value="bunker">
+                                Underground Bunker - RM300/night
+                            </option>
+
+                            <option value="volcano">
+                                Volcano Fortress - RM500/night
+                            </option>
+
+                            <option value="tower">
+                                Sky Tower Hideout - RM800/night
+                            </option>
+
+                        </select>
+
+                      <small class="error-message"
+                           id="lairTypeError"
+                           style="color: #FF0000 !important;"></small> 
+                       </div>
+
+
+                    <!-- RENTAL DURATION -->
+                    <div class="form-group">
+
+                        <label for="nights">
+                            Rental Duration (Nights) *
+                        </label>
+
+                        <input
+                            type="number"
+                            id="nights"
+                            name="nights"
+                            min="1"
+                            max="30"
+                            step="1"
+                            placeholder="1 - 30 nights"
+                            aria-describedby="nightsError"
+                            required
+                        >
+
+                        <small class="error-message"
+                               id="nightsError"
+                               style="color: #FF0000 !important;">
+                            </small>
+
+
+                    </div>
+
+
+                    <!-- MEMBERSHIP LEVEL -->
+                    <div class="form-group">
+
+                        <label for="membership">
+                            Membership Level *
+                        </label>
+
+                        <select
+                            id="membership"
+                            name="membership"
+                            aria-describedby="membershipError"
+                            required
+                        >
+
+                            <option value="">
+                                -- Select Membership --
+                            </option>
+
+                            <option value="basic">
+                                Basic Member - 0% Discount
+                            </option>
+
+                            <option value="silver">
+                                Silver Member - 10% Discount
+                            </option>
+
+                            <option value="gold">
+                                Gold Member - 15% Discount
+                            </option>
+
+                            <option value="vip">
+                                VIP Member - 20% Discount
+                            </option>
+
+                        </select>
+
+                        <small class="error-message"
+                                id="membershipError"
+                                style="color: #FF0000 !important;">
+                            </small>
+
+                    </div>
+
+
+                    <!-- CALCULATE BUTTON -->
+                    <button
+                        type="submit"
+                        class="primary-btn full-btn">
+
+                        Calculate My Discount →
+                    </button>
+
+
+                    <!-- RESET BUTTON -->
+                    <button
+                        type="reset"
+                        class="reset-btn">
+
+                        Reset Form
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- RIGHT SIDE: INFORMATION -->
+            <aside class="kiosk-sidebar">
+
+                <!-- RENTAL PRICES -->
+                <div class="glass-card pricing-card">
+
+                    <p class="eyebrow">
+                        TRANSPARENT PRICING
+                    </p>
+
+                    <h2>Lair Rental Rates</h2>
+
+                    <div class="price-row">
+                        <span>Underground Bunker</span>
+                        <strong>RM300/night</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span>Volcano Fortress</span>
+                        <strong>RM500/night</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span>Sky Tower Hideout</span>
+                        <strong>RM800/night</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- MEMBERSHIP DISCOUNTS -->
+                <div class="glass-card pricing-card">
+
+                    <p class="eyebrow">
+                        EXCLUSIVE REWARDS
+                    </p>
+
+                    <h2>Loyalty Membership</h2>
+
+                    <div class="price-row">
+                        <span>Basic Member</span>
+                        <strong>0%</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span>Silver Member</span>
+                        <strong>10%</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span>Gold Member</span>
+                        <strong>15%</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span>VIP Member</span>
+                        <strong>20%</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- CALCULATION RULES -->
+                <div class="glass-card pricing-card">
+
+                    <p class="eyebrow">
+                        HOW IT WORKS
+                    </p>
+
+                    <h2>Calculation Rules</h2>
+
+                    <p>
+                        Subtotal = Price Per Night × Nights
+                    </p>
+
+                    <p>
+                        Discount = Subtotal × Membership Rate
+                    </p>
+
+                    <p>
+                        Final Total = Subtotal − Discount
+                    </p>
+
+                    <p>
+                        Maximum rental duration: 30 nights.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- JAVASCRIPT RESULT DISPLAY -->
+        <section
+            id="result"
+            class="glass-card result-card"
+            aria-live="polite"
+            hidden>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <p>
+            2026 Villain Vault |
+            ICT600 Individual Assignment
+        </p>
+
+        <p>
+            Designed & Developed by Nur Farah Aisyah
+        </p>
+
+    </footer>
+
+</body>
+</html>
+
+
